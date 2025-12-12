@@ -1,4 +1,4 @@
-# ClimateNet IoT Firmware & AWS Pipeline
+# IoT Firmware & AWS Pipeline
 
 This repository contains the ESP32 firmware and AWS Lambda backend used in the ClimateNet environmental monitoring project developed at TUMO Labs × UFAR. The system collects air-quality data from multiple sensors and uploads it to AWS for storage and analysis.
 
