@@ -12,8 +12,8 @@ This repository contains the ESP32 firmware and AWS Lambda backend used in the C
 
 ## Repository Structure
 The repository is organized as follows:
-- **/arduino/** → ESP32 firmware for reading sensors and sending data to AWS
-- **/aws-lambda/** → Python Lambda function for processing incoming sensor data and storing it in S3
+- **/IoT_AirMonitoring.ino/** → ESP32 firmware for reading sensors and sending data to AWS
+- **/lambda_s3_upload.py/** → Python Lambda function for processing incoming sensor data and storing it in S3
   
 Each folder contains all necessary code, libraries, and configuration files for its respective component.
 
