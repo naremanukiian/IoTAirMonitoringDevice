@@ -1,4 +1,4 @@
-// ================== LIBRARIES ==================
+// LIBRARIES 
 
 // Library for I2C communication (used by most sensors)
 #include <Wire.h>
@@ -25,7 +25,7 @@
 #include "VOCGasIndexAlgorithm.h"
 
 
-// ================== WI-FI CONFIGURATION ==================
+// WI-FI CONFIGURATION 
 
 // Wi-Fi network name
 const char* ssid = "wifi_name";
@@ -34,7 +34,7 @@ const char* ssid = "wifi_name";
 const char* password = "wifi_password";
 
 
-// ================== API CONFIGURATION ==================
+// API CONFIGURATION 
 
 // API endpoint where data will be sent
 const char* apiEndpoint = "api-key";
@@ -43,7 +43,7 @@ const char* apiEndpoint = "api-key";
 const char* deviceId = "ESP32_01";
 
 
-// ================== SENSOR OBJECTS ==================
+// SENSOR OBJECTS 
 
 // BME280 object (temperature, humidity, pressure)
 Adafruit_BME280 bme;
@@ -58,7 +58,7 @@ Adafruit_SGP40 sgp40;
 VOCGasIndexAlgorithm voc_algorithm;
 
 
-// ================== I2C PIN CONFIGURATION ==================
+// I2C PIN CONFIGURATION 
 
 // SDA pin for I2C communication
 #define I2C_SDA 21
@@ -67,7 +67,7 @@ VOCGasIndexAlgorithm voc_algorithm;
 #define I2C_SCL 22
 
 
-// ================== SPS30 SENSOR CONFIGURATION ==================
+// SPS30 SENSOR CONFIGURATION 
 
 // I2C address of SPS30 particulate matter sensor
 #define SPS30_ADDR 0x69
@@ -76,7 +76,7 @@ VOCGasIndexAlgorithm voc_algorithm;
 #define SPS30_PWR 19
 
 
-// ================== CRC FUNCTION ==================
+//  CRC FUNCTION 
 // Calculates CRC8 checksum to verify SPS30 data integrity
 uint8_t sps30_crc8(const uint8_t *buf, uint8_t len) {
 
@@ -102,7 +102,7 @@ uint8_t sps30_crc8(const uint8_t *buf, uint8_t len) {
 }
 
 
-// ================== I2C WRITE FUNCTION ==================
+//  I2C WRITE FUNCTION 
 // Sends a 16-bit command to the SPS30 sensor
 void i2cWrite16(uint16_t cmd) {
 
@@ -120,7 +120,7 @@ void i2cWrite16(uint16_t cmd) {
 }
 
 
-// ================== I2C READ FUNCTION ==================
+// I2C READ FUNCTION 
 // Reads a specific number of bytes from SPS30
 bool i2cReadBytes(uint8_t *buf, size_t len) {
 
@@ -142,7 +142,7 @@ bool i2cReadBytes(uint8_t *buf, size_t len) {
 }
 
 
-// ================== START SPS30 ==================
+// START SPS30 
 // Powers on SPS30 and starts measurement
 void startSPS30() {
 
@@ -174,7 +174,7 @@ void startSPS30() {
 }
 
 
-// ================== STOP SPS30 ==================
+// STOP SPS30 
 // Stops measurement and powers off SPS30
 void stopSPS30() {
 
@@ -189,7 +189,7 @@ void stopSPS30() {
 }
 
 
-// ================== CHECK DATA READY ==================
+// CHECK DATA READY 
 // Checks if SPS30 has new data available
 bool spsDataReady() {
 
@@ -208,7 +208,7 @@ bool spsDataReady() {
 }
 
 
-// ================== PARSE FLOAT ==================
+//  PARSE FLOAT 
 // Converts raw SPS30 bytes into float
 float parseFloat(const uint8_t* p) {
 
@@ -233,7 +233,7 @@ float parseFloat(const uint8_t* p) {
 }
 
 
-// ================== READ SPS30 DATA ==================
+// READ SPS30 DATA 
 // Reads particulate matter values into array
 void readSPS30(float* out, int count) {
 
@@ -272,7 +272,7 @@ void readSPS30(float* out, int count) {
 }
 
 
-// ================== WIFI CONNECTION ==================
+//  WIFI CONNECTION 
 // Connects ESP32 to Wi-Fi network
 void connectWiFi() {
 
@@ -308,7 +308,7 @@ void connectWiFi() {
 }
 
 
-// ================== SETUP FUNCTION ==================
+//  SETUP FUNCTION 
 // Runs once when ESP32 boots
 void setup() {
 
@@ -352,7 +352,7 @@ void setup() {
 }
 
 
-// ================== LOOP FUNCTION ==================
+//  LOOP FUNCTION 
 // Main program loop
 void loop() {
 
